@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0ea5e9">
+    <title>{% block title %}Khusainov Mirzabek — Web Developer Portfolio{% endblock %}</title>
+    <meta name="description" content="Portfolio of Khusainov Mirzabek, a web developer crafting modern, fast, and accessible websites and apps.">
+    <link rel="icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+        <nav class="nav container" aria-label="Primary">
+            <a href="/" class="logo" aria-label="Go to home">
+                <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#22d3ee"/>
+                            <stop offset="100%" stop-color="#0ea5e9"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="4" y="4" width="40" height="40" rx="10" fill="url(#g)"/>
+                    <path d="M14 30L24 12l10 18h-4l-6-11-6 11h-4z" fill="#0b1220"/>
+                </svg>
+                <span>Mirzabek</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle" class="btn btn-ghost" aria-label="Toggle theme">Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        {% if messages %}
+        <div class="container flash-messages">
+            {% for message in messages %}
+            <div class="flash {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Khusainov Mirzabek. All rights reserved.</p>
+            <a class="btn btn-ghost" href="#home">Back to top</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'main.js' %}" defer></script>
+</body>
+</html>
+
+
+
+
