@@ -4,32 +4,30 @@
 {% block content %}
     <section id="home" class="hero container">
         <div class="hero-content">
-            <p class="eyebrow">Available for freelance • Based in Uzbekistan</p>
+            <p class="eyebrow">Uzbekistan</p>
             <h1>
                 Khusainov <span class="accent">Mirzabek</span>
             </h1>
-            <p class="subtitle">Web Developer — building fast, accessible, and beautiful web experiences.</p>
+            <p class="subtitle">Web dasturchi </p>
             <div class="cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                <a href="#projects" class="btn btn-primary">Loyihalar</a>
+                <a href="#contact" class="btn btn-outline">Bog'lanish</a>
             </div>
             <ul class="social">
-                <li><a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
+                <li><a href="https://github.com/Mirzabek3555" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
-                <li><a href="mailto:example@mail.com" aria-label="Email">Email</a></li>
+                <li><a href="https://xusainovmirzabek@gmail.com" aria-label="Email">Email</a></li>
             </ul>
         </div>
         <div class="hero-art">
             <img src="{% static 'images/profile.jpg' %}" alt="Khusainov Mirzabek portrait" class="portrait">
-            <div class="orb orb-a" aria-hidden="true"></div>
-            <div class="orb orb-b" aria-hidden="true"></div>
         </div>
     </section>
 
     <section id="projects" class="section container">
         <div class="section-head">
-            <h2>Featured Projects</h2>
-            <p>Selected work showcasing performance, UX, and code quality.</p>
+            <h2>Loyihalar</h2>
+            <p>Ish faoliyatimdan tanlangan, samaradorlik va sifatni ko'rsatadigan loyihalar.</p>
         </div>
         <div class="projects-grid" role="list">
             {% for p in projects %}
@@ -50,8 +48,8 @@
             <article class="card" role="listitem">
                 <div class="card-media shimmer"></div>
                 <div class="card-body">
-                    <h3>Coming soon</h3>
-                    <p>Projects will appear here once added.</p>
+                    <h3>Tez orada</h3>
+                    <p>Loyihalar qo'shilishi bilan shu yerda paydo bo'ladi.</p>
                 </div>
             </article>
             {% endfor %}
@@ -60,30 +58,30 @@
 
     <section id="about" class="section container">
         <div class="section-head">
-            <h2>About</h2>
-            <p>I design and develop modern web apps with a focus on performance and accessibility.</p>
+            <h2>Men haqimda</h2>
+            <p>Men zamonaviy veb ilovalarini samaradorlik va qulaylikka e'tibor qaratgan holda ishlab chiqaman.</p>
         </div>
         <div class="about-grid">
             <div>
-                <h3>What I do</h3>
+                <h3>Nimalar qilaman</h3>
                 <ul class="checklist">
-                    <li>Responsive UI and component systems</li>
-                    <li>SEO, Core Web Vitals, and performance budgets</li>
-                    <li>Design systems and themeable tokens</li>
-                    <li>Clean, maintainable code and best practices</li>
+                    <li>Responsiv UI va komponet tizimlari</li>
+                    <li>SEO, Core Web Vitals va samaradorlik</li>
+                    <li>Dizayn tizimlari va tema tokenlari</li>
+                    <li>Toza, parvarishlanadigan kod va eng yaxshi amaliyotlar</li>
                 </ul>
             </div>
             <div>
-                <h3>Experience</h3>
-                <p>Worked across several projects delivering robust frontends and smooth user experiences.</p>
+                <h3>Tajriba</h3>
+                <p>Bir necha loyihalarda kuchli frontend va yoqimli foydalanuvchi tajribasini taqdim etganman.</p>
             </div>
         </div>
     </section>
 
     <section id="skills" class="section container">
         <div class="section-head">
-            <h2>Skills</h2>
-            <p>Technologies and tools I use regularly.</p>
+            <h2>Ko'nikmalar</h2>
+            <p>Doimiy foydalanadigan texnologiyalar va vositalar.</p>
         </div>
         <ul class="tags">
             {% for s in skills %}<li>{{ s.name }}</li>{% empty %}
@@ -94,26 +92,26 @@
 
     <section id="contact" class="section container">
         <div class="section-head">
-            <h2>Contact</h2>
-            <p>Have a project in mind? Let’s talk.</p>
+            <h2>Aloqa</h2>
+            <p>Loyiha bormi? Keling, gaplashamiz.</p>
         </div>
         <form class="contact-form" name="contact" method="post">
             {% csrf_token %}
             <div class="grid-2">
                 <label>
-                    <span>Name</span>
+                    <span>Ism</span>
                     <input required name="name" autocomplete="name" />
                 </label>
                 <label>
-                    <span>Email</span>
+                    <span>Elektron pochta</span>
                     <input required name="email" type="email" autocomplete="email" />
                 </label>
             </div>
             <label>
-                <span>Message</span>
+                <span>Xabar</span>
                 <textarea required name="message" rows="5"></textarea>
             </label>
-            <button class="btn btn-primary" type="submit">Send Message</button>
+            <button class="btn btn-primary" type="submit">Yuborish</button>
         </form>
     </section>
 {% endblock %}

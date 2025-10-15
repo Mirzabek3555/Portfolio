@@ -11,8 +11,14 @@ function updateTheme() {
   const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
   document.documentElement.dataset.theme = next;
   localStorage.setItem('theme', next);
+  if (toggle) toggle.textContent = next === 'dark' ? 'Tema: Qorong\'u' : 'Tema: Yorug\'';
 }
-if (toggle) toggle.addEventListener('click', updateTheme);
+if (toggle) {
+  toggle.addEventListener('click', updateTheme);
+  // initialize button label on load
+  const current = document.documentElement.dataset.theme;
+  toggle.textContent = current === 'dark' ? 'Tema: Qorong\'u' : 'Tema: Yorug\'';
+}
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 if (navToggle && navLinks) {

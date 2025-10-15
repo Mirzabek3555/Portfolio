@@ -1,7 +1,8 @@
 /* Inlined from src/styles.css */
-/* Design system tokens */
+/* Design system tokens with explicit theme support */
 :root { --bg: #0b1220; --bg-elevated: #0f172a; --text: #e2e8f0; --muted: #94a3b8; --primary: #0ea5e9; --primary-2: #22d3ee; --accent: #34d399; --card: #0f172a; --border: #1e293b; --ring: 0 0 0 3px rgb(14 165 233 / 35%); --radius: 14px; --shadow-1: 0 10px 30px rgb(2 6 23 / 35%); --shadow-2: 0 20px 60px rgb(2 6 23 / 50%); }
-@media (prefers-color-scheme: light) { :root { --bg: #ffffff; --bg-elevated: #f8fafc; --text: #0f172a; --muted: #334155; --card: #ffffff; --border: #e2e8f0; } }
+html[data-theme='light'] { --bg: #ffffff; --bg-elevated: #f8fafc; --text: #0f172a; --muted: #334155; --card: #ffffff; --border: #e2e8f0; }
+html[data-theme='dark'] { --bg: #0b1220; --bg-elevated: #0f172a; --text: #e2e8f0; --muted: #94a3b8; --card: #0f172a; --border: #1e293b; }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: radial-gradient(1200px 600px at 80% -10%, rgb(14 165 233 / 18%), transparent 60%), radial-gradient(1000px 600px at -10% 0%, rgb(52 211 153 / 16%), transparent 60%), var(--bg); line-height: 1.6; }
@@ -41,9 +42,7 @@ body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, S
 .social a:hover { color: var(--text); border-bottom-color: transparent; }
 .hero-art { position: relative; min-height: 320px; }
 .portrait { position: relative; width: 260px; height: 260px; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); box-shadow: var(--shadow-2); display: block; margin-left: auto; }
-.orb { position: absolute; filter: blur(30px); opacity: .9; border-radius: 999px; }
-.orb-a { width: 220px; height: 220px; background: radial-gradient(circle, var(--primary-2), transparent 60%); top: 10%; right: 10%; }
-.orb-b { width: 180px; height: 180px; background: radial-gradient(circle, var(--accent), transparent 60%); bottom: 12%; left: 0; }
+/* Removed decorative blur orbs over photo for a clean portrait */
 /* grid overlay removed */
 /* Cards */
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
