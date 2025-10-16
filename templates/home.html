@@ -27,26 +27,18 @@
     <section id="projects" class="section container">
         <div class="section-head">
             <h2>Loyihalar</h2>
-            <p>Ish faoliyatimdan tanlangan, samaradorlik va sifatni ko'rsatadigan loyihalar.</p>
+            <p>Men ishlagan va men qatnashgan loyihalar</p>
         </div>
         <div class="projects-grid" role="list">
             {% for p in projects %}
             <article class="card" role="listitem">
-                <div class="card-media {% if not p.thumbnail %}shimmer{% endif %}">
-                    {% if p.thumbnail %}<img src="{{ p.thumbnail.url }}" alt="{{ p.title }} thumbnail">{% endif %}
-                </div>
                 <div class="card-body">
                     <h3>{{ p.title }}</h3>
                     <p>{{ p.description }}</p>
-                    <div class="card-actions">
-                        {% if p.live_url %}<a class="btn btn-sm btn-primary" href="{{ p.live_url }}" target="_blank" rel="noopener">Live</a>{% endif %}
-                        {% if p.code_url %}<a class="btn btn-sm btn-outline" href="{{ p.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
-                    </div>
                 </div>
             </article>
             {% empty %}
             <article class="card" role="listitem">
-                <div class="card-media shimmer"></div>
                 <div class="card-body">
                     <h3>Tez orada</h3>
                     <p>Loyihalar qo'shilishi bilan shu yerda paydo bo'ladi.</p>
@@ -63,17 +55,23 @@
         </div>
         <div class="about-grid">
             <div>
-                <h3>Nimalar qilaman</h3>
+                <h3>Shaxsiy ma'lumotlar</h3>
                 <ul class="checklist">
-                    <li>Responsiv UI va komponet tizimlari</li>
-                    <li>SEO, Core Web Vitals va samaradorlik</li>
-                    <li>Dizayn tizimlari va tema tokenlari</li>
-                    <li>Toza, parvarishlanadigan kod va eng yaxshi amaliyotlar</li>
+                    <li>TATU Urganch filiali bitiruvchisi</li>
+                    <li>Web dasturlashda 5 yildan ortiq tajriba</li>
+                    <li>24 yosh, Xorazm Tuproqqala</li>
+                    <li>Unicon-Soft IT kompaniyasi hodimi</li>
+                    <li>Muhammad Al-Xorazmiy vorislari loyihasida mentor</li>
                 </ul>
             </div>
             <div>
-                <h3>Tajriba</h3>
-                <p>Bir necha loyihalarda kuchli frontend va yoqimli foydalanuvchi tajribasini taqdim etganman.</p>
+                <h3>Xusainov Mirzabek</h3>
+                <ul class="checklist">
+                    <li>Start-Up loyihalar asoschisi</li>
+                    <li>Tajribali dasturchi</li>
+                    <li>Jamoa bilan ishlash ko'nikmalar bor </li>
+                    <li>Futbol bilan muntazam shug'ullanuvchi inson</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -81,7 +79,7 @@
     <section id="skills" class="section container">
         <div class="section-head">
             <h2>Ko'nikmalar</h2>
-            <p>Doimiy foydalanadigan texnologiyalar va vositalar.</p>
+            <p>Doimiy foydalanadigan texnologiyalar va vositalarim.</p>
         </div>
         <ul class="tags">
             {% for s in skills %}<li>{{ s.name }}</li>{% empty %}
@@ -93,7 +91,7 @@
     <section id="contact" class="section container">
         <div class="section-head">
             <h2>Aloqa</h2>
-            <p>Loyiha bormi? Keling, gaplashamiz.</p>
+            <p>Men bilan bog'lanish</p>
         </div>
         <form class="contact-form" name="contact" method="post">
             {% csrf_token %}

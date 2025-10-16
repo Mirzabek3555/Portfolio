@@ -4,7 +4,7 @@ from .models import Project, Skill, ContactMessage
 
 
 def home(request):
-    projects = Project.objects.filter(featured=True)[:6]
+    projects = Project.objects.filter(featured=True)
     skills = Skill.objects.order_by('name')
 
     if request.method == 'POST':
